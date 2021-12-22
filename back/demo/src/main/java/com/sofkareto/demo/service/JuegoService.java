@@ -14,4 +14,8 @@ public class JuegoService {
     public Juego crearJuego(Juego juego) {
         return juegoRepository.save(juego);
     }
+
+    public Juego obtenerJuego(int id){
+        return juegoRepository.findById(id).orElseThrow();
+    }
 }

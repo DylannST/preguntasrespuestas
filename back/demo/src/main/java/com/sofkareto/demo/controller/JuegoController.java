@@ -14,7 +14,12 @@ public class JuegoController {
     JuegoService juegoService;
 
     @PostMapping("api/juego")
-    public Juego crearJuego(@RequestBody Juego juego){
-      return juegoService.crearJuego(juego);
+    public Juego crearJuego(@RequestBody Juego juego) {
+        return juegoService.crearJuego(juego);
+    }
+
+    @GetMapping("api/juego/{id}")
+    public Juego obtenerJuego(@PathVariable("id") int id) {
+        return juegoService.obtenerJuego(id);
     }
 }
