@@ -26,9 +26,27 @@ public class Juego {
     public Juego() {
     }
 
-    public Juego(int idJuego, Set<Ronda> rondas, Jugador jugador) {
+    public int getIdJuego() {
+        return idJuego;
+    }
+
+    public void setIdJuego(int idJuego) {
         this.idJuego = idJuego;
+    }
+
+    public Set<Ronda> getRondas() {
+        return rondas;
+    }
+
+    public void setRondas(Set<Ronda> rondas) {
         this.rondas = rondas;
+    }
+
+    public Jugador getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(Jugador jugador) {
         this.jugador = jugador;
     }
 }
