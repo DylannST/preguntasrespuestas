@@ -17,7 +17,7 @@ public class Acumulado {
     private Long total;
 
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
-    @JoinColumn(name = "idjugador", unique = true, nullable = false)
+    @JoinColumn(name = "idjugador")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Jugador jugador;
 

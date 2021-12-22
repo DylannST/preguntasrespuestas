@@ -1,5 +1,6 @@
 package com.sofkareto.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.sofkareto.demo.enums.Dificultad;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ public class Categoria {
     private int idCategoria;
 
     @OneToMany(mappedBy = "categoria", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @JsonManagedReference
     private Set<Pregunta> preguntas;
 
     @Column

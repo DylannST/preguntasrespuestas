@@ -1,8 +1,11 @@
 package com.sofkareto.demo.entity;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
+
 @Entity
 @Table(name = "opcion")
 public class Opcion {
@@ -19,7 +22,8 @@ public class Opcion {
 
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "idpregunta", unique = true, nullable = false)
+    @JoinColumn(name = "idpregunta")
+    @JsonBackReference
     private Pregunta pregunta;
 
     public Opcion() {

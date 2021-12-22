@@ -14,18 +14,18 @@ public class Ronda {
     private int idRonda;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idpremio", unique = true, nullable = false)
+    @JoinColumn(name = "idpremio")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Premio premio;
 
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "idjuego", unique = true, nullable = false)
+    @JoinColumn(name = "idjuego")
     private Juego juego;
 
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idpregunta", unique = true, nullable = false)
+    @JoinColumn(name = "idpregunta")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Pregunta pregunta;
 

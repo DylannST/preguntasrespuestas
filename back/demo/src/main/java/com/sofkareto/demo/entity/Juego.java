@@ -19,7 +19,7 @@ public class Juego {
 
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name="idjugador", unique = true, nullable = false)
+    @JoinColumn(name="idjugador")
     private Jugador jugador;
 
 
