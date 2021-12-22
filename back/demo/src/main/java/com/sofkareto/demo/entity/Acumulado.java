@@ -23,4 +23,28 @@ public class Acumulado {
 
     public Acumulado() {
     }
+
+    public int getIdAcumulado() {
+        return idAcumulado;
+    }
+
+    public void setIdAcumulado(int idAcumulado) {
+        this.idAcumulado = idAcumulado;
+    }
+
+    public Long getTotal() {
+        return total;
+    }
+
+    public void setTotal(Long total) {
+        this.total = total;
+    }
+
+    public Jugador getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
 }

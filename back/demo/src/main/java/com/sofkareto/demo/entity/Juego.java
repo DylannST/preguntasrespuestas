@@ -25,4 +25,10 @@ public class Juego {
 
     public Juego() {
     }
+
+    public Juego(int idJuego, Set<Ronda> rondas, Jugador jugador) {
+        this.idJuego = idJuego;
+        this.rondas = rondas;
+        this.jugador = jugador;
+    }
 }

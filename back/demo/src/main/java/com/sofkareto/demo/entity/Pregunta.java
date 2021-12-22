@@ -33,4 +33,44 @@ public class Pregunta {
 
     public Pregunta() {
     }
+
+    public int getIdPregunta() {
+        return idPregunta;
+    }
+
+    public void setIdPregunta(int idPregunta) {
+        this.idPregunta = idPregunta;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Ronda getRonda() {
+        return ronda;
+    }
+
+    public void setRonda(Ronda ronda) {
+        this.ronda = ronda;
+    }
+
+    public Set<Opcion> getOpciones() {
+        return opciones;
+    }
+
+    public void setOpciones(Set<Opcion> opciones) {
+        this.opciones = opciones;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 }

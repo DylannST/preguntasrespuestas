@@ -24,4 +24,36 @@ public class Opcion {
 
     public Opcion() {
     }
+
+    public int getIdOpcion() {
+        return idOpcion;
+    }
+
+    public void setIdOpcion(int idOpcion) {
+        this.idOpcion = idOpcion;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public boolean isEsVerdadero() {
+        return esVerdadero;
+    }
+
+    public void setEsVerdadero(boolean esVerdadero) {
+        this.esVerdadero = esVerdadero;
+    }
+
+    public Pregunta getPregunta() {
+        return pregunta;
+    }
+
+    public void setPregunta(Pregunta pregunta) {
+        this.pregunta = pregunta;
+    }
 }

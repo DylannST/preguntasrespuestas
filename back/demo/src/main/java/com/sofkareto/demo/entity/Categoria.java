@@ -23,4 +23,36 @@ public class Categoria {
 
     public Categoria() {
     }
+
+    public int getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    public Set<Pregunta> getPreguntas() {
+        return preguntas;
+    }
+
+    public void setPreguntas(Set<Pregunta> preguntas) {
+        this.preguntas = preguntas;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Dificultad getDificultad() {
+        return dificultad;
+    }
+
+    public void setDificultad(Dificultad dificultad) {
+        this.dificultad = dificultad;
+    }
 }

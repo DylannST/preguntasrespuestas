@@ -21,4 +21,28 @@ public class Premio {
 
     public Premio() {
     }
+
+    public int getIdPremio() {
+        return idPremio;
+    }
+
+    public void setIdPremio(int idPremio) {
+        this.idPremio = idPremio;
+    }
+
+    public int getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
+    }
+
+    public Ronda getRonda() {
+        return ronda;
+    }
+
+    public void setRonda(Ronda ronda) {
+        this.ronda = ronda;
+    }
 }

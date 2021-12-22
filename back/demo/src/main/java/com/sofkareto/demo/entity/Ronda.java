@@ -32,4 +32,36 @@ public class Ronda {
 
     public Ronda() {
     }
+
+    public int getIdRonda() {
+        return idRonda;
+    }
+
+    public void setIdRonda(int idRonda) {
+        this.idRonda = idRonda;
+    }
+
+    public Premio getPremio() {
+        return premio;
+    }
+
+    public void setPremio(Premio premio) {
+        this.premio = premio;
+    }
+
+    public Juego getJuego() {
+        return juego;
+    }
+
+    public void setJuego(Juego juego) {
+        this.juego = juego;
+    }
+
+    public Pregunta getPregunta() {
+        return pregunta;
+    }
+
+    public void setPregunta(Pregunta pregunta) {
+        this.pregunta = pregunta;
+    }
 }
