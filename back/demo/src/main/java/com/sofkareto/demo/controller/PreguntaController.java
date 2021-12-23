@@ -15,8 +15,8 @@ public class PreguntaController {
     PreguntaService preguntaService;
 
     @PostMapping("api/pregunta")
-    public void guardarPregunta(@RequestBody List<Pregunta> preguntas) {
-        preguntaService.guardarPregunta(preguntas);
+    public List<Pregunta> guardarPregunta(@RequestBody List<Pregunta> preguntas) {
+       return preguntaService.guardarPregunta(preguntas);
     }
 
     @DeleteMapping("api/pregunta/{id}")
@@ -37,6 +37,11 @@ public class PreguntaController {
     @GetMapping("api/pregunta/categoria/{id}")
     public List<Pregunta> obtenerPreguntasPorCategoria(@PathVariable("id") int id) {
         return preguntaService.obtenerPreguntasPorCategoria(id);
+    }
+
+    @GetMapping("api/pregunta/{descripcion}")
+    public int obtenerPorPregunta(@PathVariable("descripcion") String descripcion){
+        return preguntaService.obtenerPorPregunta(descripcion);
     }
 
 }

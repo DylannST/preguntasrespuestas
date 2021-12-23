@@ -20,5 +20,7 @@ public interface PreguntaRepository extends CrudRepository<Pregunta, Integer> {
     @Query(value = "SELECT * FROM pregunta as p WHERE p.idcategoria=?1", nativeQuery = true)
     List<Pregunta> obtenerPreguntasPorCategoria(int id);
 
+    @Query(value = "SELECT p.idpregunta FROM pregunta as p WHERE p.descripcion=?1", nativeQuery = true)
+     int obtenerPorNombre(String nombre);
 
 }

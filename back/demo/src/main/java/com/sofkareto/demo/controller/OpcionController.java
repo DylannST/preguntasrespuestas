@@ -29,7 +29,7 @@ public class OpcionController {
     }
 
     @DeleteMapping("api/opcion/pregunta/{id}")
-    public void nombreMetodo(@PathVariable("id") int id) {
+    public void eliminarOpcionPorPregunta(@PathVariable("id") int id) {
         opcionService.eliminarOpcionPorPregunta(id);
     }
 }

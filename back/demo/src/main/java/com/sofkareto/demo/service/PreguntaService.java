@@ -5,6 +5,7 @@ import com.sofkareto.demo.repository.PreguntaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -13,10 +14,13 @@ public class PreguntaService {
     @Autowired
     PreguntaRepository preguntaRepository;
 
-    public void guardarPregunta(List<Pregunta> preguntas) {
+    public List<Pregunta> guardarPregunta(List<Pregunta> preguntas) {
+
+        List<Pregunta> pre =new ArrayList<>();
         preguntas.forEach(pregunta -> {
-            preguntaRepository.save(pregunta);
+            pre.add(preguntaRepository.save(pregunta));
         });
+        return pre;
     }
 
     public boolean editarPregunta(Pregunta pregunta) {
@@ -38,5 +42,9 @@ public class PreguntaService {
 
     public List<Pregunta> obtenerPreguntasPorCategoria(int id) {
         return preguntaRepository.obtenerPreguntasPorCategoria(id);
+    }
+
+    public int obtenerPorPregunta(String nombre){
+        return preguntaRepository.obtenerPorNombre(nombre);
     }
 }

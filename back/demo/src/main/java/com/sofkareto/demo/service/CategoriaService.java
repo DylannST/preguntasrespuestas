@@ -40,4 +40,6 @@ public class CategoriaService {
         });
         return dificultades;
     }
+
+
 }
