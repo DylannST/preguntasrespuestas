@@ -1,7 +1,7 @@
 package com.sofkareto.demo.enums;
 
 public enum Dificultad {
-    FACIL("FACIL"), NORMAL("NORMAL"), DIFICIL("DIFICIL"), MUYDIFICIL("MUYDIFICIL"), MAXIMO("MAXIMO");
+    FACIL("FACIL"), NORMAL("NORMAL"), DIFICIL("DIFICIL"), MUYDIFICIL("MUY DIFICIL"), MAXIMO("MAXIMO");
 
     private String dificultad;
 
