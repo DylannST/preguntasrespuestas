@@ -1,0 +1,89 @@
+<ng-container *ngIf="categoria.length === 15; else elseTemplate">
+  <div class="card-body centerText">
+    <h5 class="card-title">Ingrese categorías</h5>
+    <p class="card-text">
+      Se debe de ingresar categorías (pestaña categorías). Para poder agregar
+      preguntas se deben crear mínimo 5 categorías
+    </p>
+  </div>
+</ng-container>
+<ng-template #elseTemplate>
+  <div class="container px-4 divPrin divPrin">
+    <form [formGroup]="formPregunta">
+      <div class="row gx-5">
+        <div class="col">
+          <div class="p-3 border bg-light">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Categoria:</label
+              >
+              <select
+                class="form-select form-select-sm"
+                aria-label=".form-select-sm example"
+                id="select-de"
+                formControlName="categori"
+              >
+                <option
+                  *ngFor="let item of categoria; let i = index"
+                  [value]="item.descrip"
+                >
+                  {{ item.descrip }}
+                </option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Pregunta:</label
+              >
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+                formControlName="descrip"
+              ></textarea>
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-success"
+              style="margin-bottom: 8px"
+              (click)="agregar()"
+            >
+              Agregar
+            </button>
+          </div>
+        </div>
+        <div class="col">
+          <button
+            type="button"
+            class="btn btn-success"
+            style="margin-bottom: 8px"
+            (click)="guardar()"
+          >
+            Guardar
+          </button>
+          <div class="p-3 border bg-light">
+            <table class="table table-sm">
+              <tr>
+                <td>Descripción</td>
+                <td>Categoria</td>
+                <td>Eliminar</td>
+              </tr>
+              <tr *ngFor="let item of pregunta">
+                <td>{{ item.descrip }}</td>
+                <td>{{ item.categori }}</td>
+                <td>
+                  <i
+                    class="fas fa-trash"
+                    style="cursor: pointer"
+                    (click)="eliminar(item)"
+                  ></i>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>

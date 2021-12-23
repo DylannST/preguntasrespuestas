@@ -1,0 +1,78 @@
+<ng-container *ngIf="pregunta.length === 15; else elseTemplate">
+  <div class="card-body centerText centerText">
+    <h5 class="card-title">Ingrese Preguntas</h5>
+    <p class="card-text">
+      Se debe de ingresar preguntas(pestaña preguntas). Para poder agregar
+      opciones se deben crear mínimo 25 preguntas
+    </p>
+  </div>
+</ng-container>
+<ng-template #elseTemplate>
+  <form [formGroup]="formOpciones">
+    <div class="container px-4 divPrin">
+      <div class="row gx-5">
+        <div class="col">
+          <div class="p-3 border bg-light">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Pregunta:</label
+              >
+              <select
+                class="form-select form-select-sm"
+                aria-label=".form-select-sm example"
+                id="select-de"
+                formControlName="pregunta"
+              >
+                <option *ngFor="let item of pregunta" [value]="item.descrip">
+                  {{ item.descrip }}
+                </option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="select-de" class="form-label">Respuesta:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                formControlName="respuesta"
+              />
+            </div>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="margin-bottom: 8px"
+              (click)="agregar()"
+            >
+              Agregar
+            </button>
+          </div>
+        </div>
+        <div class="col">
+          <button
+            type="button"
+            class="btn btn-success"
+            style="margin-bottom: 8px"
+            (click)="finalizar()"
+          >
+            Finalizar
+          </button>
+          <div class="p-3 border bg-light" >
+            <table class="table table-sm" *ngFor="let item of opcion">
+              <h5>{{ item.pregunta }}</h5>
+              <tr>
+                <td>Respuesta</td>
+                <td>Correcta</td>
+                <td>Eliminar</td>
+              </tr>
+              <tr *ngFor="let resp of item.respuestas">
+                <td>{{ resp.texto }}</td>
+                <td><input type="radio" [name]="item.pregunta" id="" (change)="cambioEsVerdadero($event,item,resp.texto)"/></td>
+                <td><i class="fas fa-trash" style="cursor: pointer" (click)="eliminar(item,resp.texto)"></i></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</ng-template>

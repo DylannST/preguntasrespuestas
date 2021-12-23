@@ -1,0 +1,86 @@
+<ng-container *ngIf="niveles.length === 0; else elseTemplate">
+  <div class="container px-4 divPrin centerText">
+    <div class="spinner-border text-success" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</ng-container>
+<ng-template #elseTemplate>
+  <div class="container px-4 divPrin">
+    <form [formGroup]="formCategoria">
+      <div class="row gx-5">
+        <div class="col">
+          <div class="p-3 border bg-light">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Categoria:</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="maximo 20 caracteres"
+                formControlName="descrip"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="select-de" class="form-label">Dificultad</label>
+              <select
+                class="form-select form-select-sm"
+                aria-label=".form-select-sm example"
+                id="select-de"
+                formControlName="dificultad"
+              >
+                <option
+                  *ngFor="let nivel of niveles; let i = index"
+                  [value]="nivel"
+                >
+                  {{ nivel }}
+                </option>
+              </select>
+            </div>
+            <button
+              type="button"
+              class="btn btn-success"
+              style="margin-bottom: 8px"
+              (click)="agregar()"
+            >
+              Agregar
+            </button>
+          </div>
+        </div>
+        <div class="col">
+          <button
+            type="button"
+            class="btn btn-success"
+            style="margin-bottom: 8px"
+            (click)="guardar()"
+          >
+            Guardar
+          </button>
+          <div class="p-3 border bg-light">
+            <table class="table table-sm">
+              <tr>
+                <td>Descripción</td>
+                <td>Dificultad</td>
+                <td>Eliminar</td>
+              </tr>
+              <tr *ngFor="let item of categoria">
+                <td>{{ item.descrip }}</td>
+
+                <td>{{ item.dificultad }}</td>
+                <td>
+                  <i
+                    class="fas fa-trash"
+                    style="cursor: pointer"
+                    (click)="eliminarItem(item)"
+                  ></i>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>
