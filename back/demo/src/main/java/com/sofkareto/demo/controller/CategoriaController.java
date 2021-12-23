@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.PUT, RequestMethod.POST})
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.PUT, RequestMethod.POST,RequestMethod.OPTIONS,RequestMethod.DELETE})
 @RestController
 public class CategoriaController {
     @Autowired
     CategoriaService categoriaService;
 
     @PostMapping("api/categoria")
-    public void agregarCategoria(@RequestBody Categoria categoria) {
-        categoriaService.agregarCategoria(categoria);
+    public Categoria agregarCategoria(@RequestBody Categoria categoria) {
+        return categoriaService.agregarCategoria(categoria);
     }
 
     @PutMapping("api/categoria/{id}")
