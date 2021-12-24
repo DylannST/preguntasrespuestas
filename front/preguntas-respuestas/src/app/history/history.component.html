@@ -1,0 +1,13 @@
+
+<ng-container *ngIf="carga.id!==undefined; else elseTemplate">
+    <div class="card-body centerText">
+        <h5 class="card-title">Ganador:{{carga.id}}</h5>
+        <p class="card-text">
+         Total {{carga.total}}
+        </p>
+      </div>
+  </ng-container>
+  <ng-template #elseTemplate>
+  
+  </ng-template>
+

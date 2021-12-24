@@ -1,7 +1,9 @@
 package com.sofkareto.demo.controller;
 
+
 import com.sofkareto.demo.entity.Pregunta;
 import com.sofkareto.demo.service.PreguntaService;
+import org.apache.tomcat.util.json.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +18,7 @@ public class PreguntaController {
 
     @PostMapping("api/pregunta")
     public List<Pregunta> guardarPregunta(@RequestBody List<Pregunta> preguntas) {
-       return preguntaService.guardarPregunta(preguntas);
+        return preguntaService.guardarPregunta(preguntas);
     }
 
     @DeleteMapping("api/pregunta/{id}")
@@ -40,8 +42,20 @@ public class PreguntaController {
     }
 
     @GetMapping("api/pregunta/{descripcion}")
-    public int obtenerPorPregunta(@PathVariable("descripcion") String descripcion){
+    public int obtenerPorPregunta(@PathVariable("descripcion") String descripcion) {
         return preguntaService.obtenerPorPregunta(descripcion);
     }
+
+
+    @GetMapping("api/pregunta/form")
+    public List<Object> obtenerPreguntaForm() {
+        return preguntaService.obtenerPreguntaForm();
+    }
+
+    @GetMapping("api/pregunta/dificultad")
+    public List<Object> obtenerPreguntaDificultad(){
+        return preguntaService.obtenerPreguntasDificultad();
+    }
+
 
 }

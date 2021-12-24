@@ -12,6 +12,10 @@ import { PreguntaComponent } from './pregunta/pregunta.component';
 import { OpcionComponent } from './opcion/opcion.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { JuegoComponent } from './juego/juego.component';
+import { RegistroJugadorComponent } from './registro-jugador/registro-jugador.component';
+import { PreguntaRespuestaComponent } from './pregunta-respuesta/pregunta-respuesta.component';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     CategoriaComponent,
     PreguntaComponent,
     OpcionComponent,
+    JuegoComponent,
+    RegistroJugadorComponent,
+    PreguntaRespuestaComponent,
+    HistoryComponent,
   ],
   imports: [
     BrowserModule,

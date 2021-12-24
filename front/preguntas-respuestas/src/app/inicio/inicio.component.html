@@ -1,7 +1,11 @@
 <div>
   <nav class="navbar navbar-light" style="background-color: #e3f2fd">
     <form class="container-fluid justify-content-start">
-      <button class="btn btn-outline-success me-2 colorbuton" type="button">
+      <button
+        class="btn btn-outline-success me-2 colorbuton"
+        type="button"
+        (click)="cambioJuego()"
+      >
         Iniciar Juego
       </button>
       <button
@@ -16,5 +20,10 @@
 </div>
 <ng-container *ngIf="estado; else elseTemplate">
   <app-configurar-juego (estado)="cerrar($event)"></app-configurar-juego>
+</ng-container>
+<ng-template #elseTemplate> </ng-template>
+
+<ng-container *ngIf="estadoJuego; else elseTemplate">
+  <app-juego (estado)="cerrarJuego($event)"></app-juego>
 </ng-container>
 <ng-template #elseTemplate> </ng-template>

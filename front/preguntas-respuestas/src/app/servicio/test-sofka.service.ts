@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class TestSofkaService {
+  
   categoriaActual: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
   preguntaActual: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
   constructor(private data: DatosRetoService) {}
@@ -33,8 +34,10 @@ export class TestSofkaService {
         this.data
           .guardarPregunta(val, this.preguntaActual.getValue())
           .subscribe((pre) => {
-            this.data.guardarOpciones(pre,opciones);
+            this.data.guardarOpciones(pre, opciones);
           });
       });
   }
+
+  
 }

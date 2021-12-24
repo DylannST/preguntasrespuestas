@@ -1,0 +1,49 @@
+
+
+
+
+<div class="card-body centerText"></div>
+
+<div class="container px-4 divPrin divPrin">
+  <form [formGroup]="formJugador">
+    <div class="row gx-5">
+      <div class="col">
+        <div class="p-3 border bg-light">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Cédula:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="maximo 10 caracteres"
+              formControlName="idJugador"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"
+              >Nombre:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="maximo 10 caracteres"
+              formControlName="nombre"
+            />
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-success"
+            style="margin-bottom: 8px"
+            (click)="registrar()"
+          >
+            Registrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

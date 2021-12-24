@@ -1,0 +1,6 @@
+.closed {
+    margin-left: 900px;
+    margin-top: 15px;
+    transform: scale(1.5);
+    cursor: pointer;
+  }

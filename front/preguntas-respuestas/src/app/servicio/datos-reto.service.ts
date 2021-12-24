@@ -85,4 +85,40 @@ export class DatosRetoService {
       });
     });
   }
+  obtenerFormPreguntas(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.url}api/pregunta/form`);
+  }
+
+  guardarPremio(puntos: any): Observable<any> {
+    let obj = {
+      puntos,
+    };
+    return this.http.post(`${this.url}api/premio`, obj, {
+      headers: this.header,
+    });
+  }
+
+  guardarRonda(obj: any) {
+    console.log('objeto::::', obj);
+    this.http.post(`${this.url}api/ronda`, obj, { headers: this.header });
+  }
+
+  obtenerPreguntasConDif(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.url}api/pregunta/dificultad`);
+  }
+
+  registrarJugador(jugador: any): Observable<any> {
+    return this.http.post(`${this.url}api/jugador`, jugador, {
+      headers: this.header,
+    });
+  }
+
+  registrarJuego(obj: any): Observable<any> {
+    return this.http.post(`${this.url}api/juego`, obj, {
+      headers: this.header,
+    });
+  }
+  registrarAcum(obj: any):Observable<any> {
+    return this.http.post(`${this.url}api/acumulado`, obj, { headers: this.header });
+  }
 }

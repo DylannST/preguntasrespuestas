@@ -1,7 +1,9 @@
 package com.sofkareto.demo.service;
 
+
 import com.sofkareto.demo.entity.Pregunta;
 import com.sofkareto.demo.repository.PreguntaRepository;
+import org.apache.tomcat.util.json.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,5 +48,13 @@ public class PreguntaService {
 
     public int obtenerPorPregunta(String nombre){
         return preguntaRepository.obtenerPorNombre(nombre);
+    }
+
+    public List<Object> obtenerPreguntaForm(){
+        return preguntaRepository.obtenerPreguntaForm();
+    }
+
+    public List<Object> obtenerPreguntasDificultad(){
+        return preguntaRepository.obtenerPreguntaDificultad();
     }
 }

@@ -14,10 +14,7 @@ public class CategoriaController {
     @Autowired
     CategoriaService categoriaService;
 
-//    @PostMapping("api/categoria")
-//    public Categoria agregarCategoria(@RequestBody Categoria categoria) {
-//        return categoriaService.agregarCategoria(categoria);
-//    }
+
 
     @PostMapping("api/categoria")
     public List<Categoria> agregarCategoria(@RequestBody List<Categoria> categoria) {
